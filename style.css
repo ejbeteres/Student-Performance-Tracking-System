@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  margin: 0;
+  padding: 0;
+  color: #e0e0e0;
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #e0e0e0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.postimg.cc/0jv27Qvw/20008380-645221846.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(1px) brightness(0.7);
+  z-index: -1;
+}
+
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: rgba(30, 30, 47, 0.6); /* transparent dark background */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px); /* glass effect */
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
+  transition: background 0.4s ease, box-shadow 0.3s ease;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin-bottom: 25px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+input,
+button {
+  padding: 12px;
+  font-size: 16px;
+  margin: 8px 8px 20px 0;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background-color: #2a2a3b;
+  color: #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #00bfff;
+  outline: none;
+  box-shadow: 0 0 6px #00bfff;
+}
+
+button {
+  background-color: #00bfff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 191, 255, 0.3);
+}
+
+button:hover {
+  background-color: #009acd;
+  box-shadow: 0 6px 16px rgba(0, 191, 255, 0.4);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  background: rgba(42, 42, 59, 0.5); /* semi-transparent */
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(8px); /* glass effect */
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: background 0.4s ease;
+}
+
+
+th,
+td {
+  padding: 14px;
+  border: 1px solid rgba(59, 59, 80, 0.6);
+  text-align: center;
+  color: #e0e0e0;
+  backdrop-filter: blur(4px); /* Glass effect for individual table cells */
+  -webkit-backdrop-filter: blur(4px); /* For Safari */
+}
+
+th {
+  background-color: rgba(0, 119, 204, 0.6);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(28, 28, 44, 0.7);
+}
+
+.grade-high {
+  background-color: rgba(40, 167, 69, 0.5); /* Slightly transparent green */
+  color: #d4fcd4;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 0 6px rgba(40, 167, 69, 0.4);
+}
+
+.grade-low {
+  background-color: rgba(220, 53, 69, 0.5); /* Slightly transparent red */
+  color: #ffd6d6;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 0 6px rgba(220, 53, 69, 0.4);
+}
+
+/* Glassy Style for Delete Button */
+.actions button {
+  padding: 8px 14px;
+  margin: 4px;
+  background: rgba(231, 76, 60, 0.2); /* Semi-transparent red */
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  color: white;
+  border-radius: 8px;
+  backdrop-filter: blur(6px); /* Glass effect */
+  -webkit-backdrop-filter: blur(6px); /* For Safari */
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+  transition: all 0.3s ease;
+}
+
+.actions button:hover {
+  background: rgba(231, 76, 60, 0.3);
+  box-shadow: 0 6px 16px rgba(231, 76, 60, 0.4);
+}
+
+.actions button:active {
+  background: rgba(231, 76, 60, 0.4);
+  box-shadow: 0 6px 16px rgba(231, 76, 60, 0.5);
+}
+
+
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    font-size: 14px;
+  }
+
+  input,
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
