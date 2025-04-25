@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Student Performance Tracker</title>
   
- <!--- Web icon here -->
+  <!-- Web icon -->
   <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="style.css">
@@ -15,18 +15,20 @@
   <div class="container">
     <h1>Student Performance Tracking System</h1>
 
-    <!-- back button -->
-    <a href="https://ejbeteres.github.io/Login/">
+    <!-- Back button with accessibility improvements -->
+    <a href="https://ejbeteres.github.io/Login/" aria-label="Go back to Login page">
       <button id="backbtn">🔙 Back</button>
     </a>
-    
+
     <div>
+      <!-- Input fields for student name, subject, and score -->
       <input type="text" id="studentName" placeholder="Student Name" />
       <input type="text" id="subject" placeholder="Subject" />
       <input type="number" id="score" placeholder="Score (0-100)" />
       <button onclick="addStudent()">Add Student</button>
     </div>
 
+    <!-- Table for displaying student data -->
     <table id="studentTable">
       <thead>
         <tr>
