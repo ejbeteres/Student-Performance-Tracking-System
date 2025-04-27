@@ -44,6 +44,16 @@
     </table>
   </div>
 
+  <script>
+    // Check if the user has valid credentials in local storage
+    window.onload = function() {
+      if (!localStorage.getItem("userLoggedIn")) {
+        // If no credentials, redirect to the login page
+        window.location.href = "https://ejbeteres.github.io/Login/";
+      }
+    };
+  </script>
+
   <script src="script.js"></script>
 </body>
 </html>
