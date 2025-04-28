@@ -1,37 +1,54 @@
 let students = JSON.parse(localStorage.getItem('students')) || [];
 
     function renderTable() {
-      const tbody = document.querySelector('#studentTable tbody');
-      if (!tbody) return;
-    
-      tbody.innerHTML = '';
-    
-      students.forEach((student, index) => {
-        const row = document.createElement('tr');
-        const performanceClass = student.score >= 75 ? 'grade-high' : 'grade-low';
-    
-        row.innerHTML = `
-          <td>${index + 1}</td>
-          <td>${student.name}</td>
-          <td>${student.subject}</td>
-          <td>
-            <span class="score-text">${student.score}</span>
-            <input class="edit-score" type="number" min="0" max="100" value="${student.score}" style="display:none; width: 70px;">
-          </td>
-          <td class="${performanceClass}">
-            ${student.score >= 75 ? 'Good' : 'Needs Improvement'}
-          </td>
-          <td class="actions">
-            <button class="edit-btn" data-index="${index}">Edit</button>
-            <button class="save-btn" data-index="${index}" style="display:none;">Save</button>
-            <button class="delete-btn" data-index="${index}">Delete</button>
-          </td>
-        `;
-    
-        tbody.appendChild(row);
-      });
-    
-      // Attach event listeners
+  const tbody = document.querySelector('#studentTable tbody');
+  if (!tbody) return;
+
+  tbody.innerHTML = '';
+
+  students.forEach((student, index) => {
+    const row = document.createElement('tr');
+
+    // Determine performance text and class
+    let performanceText = '';
+    let performanceClass = '';
+
+    if (student.score >= 90) {
+      performanceText = 'Excellent';
+      performanceClass = 'grade-high';
+    } else if (student.score >= 75) {
+      performanceText = 'Good';
+      performanceClass = 'grade-high';
+    } else if (student.score >= 50) {
+      performanceText = 'Needs Improvement';
+      performanceClass = 'grade-low';
+    } else {
+      performanceText = 'Fail';
+      performanceClass = 'grade-low';
+    }
+
+    row.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${student.name}</td>
+      <td>${student.subject}</td>
+      <td>
+        <span class="score-text">${student.score}</span>
+        <input class="edit-score" type="number" min="0" max="100" value="${student.score}" style="display:none; width: 70px;">
+      </td>
+      <td class="${performanceClass}">
+        ${performanceText}
+      </td>
+      <td class="actions">
+        <button class="edit-btn" data-index="${index}">Edit</button>
+        <button class="save-btn" data-index="${index}" style="display:none;">Save</button>
+        <button class="delete-btn" data-index="${index}">Delete</button>
+      </td>
+    `;
+
+    tbody.appendChild(row);
+  });
+
+  // Attach event listeners
   document.querySelectorAll('.delete-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const index = parseInt(e.target.getAttribute('data-index'));
@@ -53,6 +70,7 @@ let students = JSON.parse(localStorage.getItem('students')) || [];
     });
   });
 }
+
 
 function enterEditMode(index) {
   const row = document.querySelectorAll('#studentTable tbody tr')[index];
