@@ -8,7 +8,8 @@
   <!-- Web icon -->
   <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
 
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
@@ -28,7 +29,10 @@
       <button onclick="addStudent()">Add Student</button>
     </div>
 
-    <!-- Table for displaying student data -->
+      <!-- Search bar for student names -->
+     <input type="text" id="searchInput" placeholder="Search Student Name..." oninput="searchStudent()" />
+
+      <!-- Table for displaying student data -->
     <table id="studentTable">
       <thead>
         <tr>
@@ -44,6 +48,7 @@
     </table>
   </div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script> 
+  
 </body>
 </html>
