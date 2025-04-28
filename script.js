@@ -82,38 +82,7 @@ function saveEdit(index) {
     }
     
     if (students.length === 0) {
-      students = [
-        { name: "Alice", subject: "Math", score: 92 },
-        { name: "Bob", subject: "English", score: 76 },
-        { name: "Charlie", subject: "Science", score: 64 },
-        { name: "David", subject: "Math", score: 85 },
-        { name: "Ella", subject: "English", score: 58 },
-        { name: "Frank", subject: "Science", score: 71 },
-        { name: "Grace", subject: "Math", score: 99 },
-        { name: "Henry", subject: "English", score: 80 },
-        { name: "Ivy", subject: "Science", score: 45 },
-        { name: "Jack", subject: "Math", score: 68 },
-        { name: "Karen", subject: "English", score: 73 },
-        { name: "Liam", subject: "Science", score: 88 },
-        { name: "Mona", subject: "Math", score: 91 },
-        { name: "Nate", subject: "English", score: 62 },
-        { name: "Olive", subject: "Science", score: 94 },
-        { name: "Paul", subject: "Math", score: 74 },
-        { name: "Queenie", subject: "English", score: 55 },
-        { name: "Rick", subject: "Science", score: 79 },
-        { name: "Sophie", subject: "Math", score: 81 },
-        { name: "Tom", subject: "English", score: 50 },
-        { name: "Uma", subject: "Science", score: 66 },
-        { name: "Victor", subject: "Math", score: 93 },
-        { name: "Wendy", subject: "English", score: 86 },
-        { name: "Xander", subject: "Science", score: 48 },
-        { name: "Yara", subject: "Math", score: 90 },
-        { name: "Zack", subject: "English", score: 79 },
-        { name: "Ava", subject: "Science", score: 100 },
-        { name: "Ben", subject: "Math", score: 60 },
-        { name: "Cleo", subject: "English", score: 72 },
-        { name: "Dean", subject: "Science", score: 84 }
-      ];
+      students = [ ];
     
       saveData(); // safe now since renderTable is defined
     }
